@@ -2,14 +2,14 @@
 title: "Install Office365 without Teams and OneDrive"
 subtitle: "At least remove the social stuff if you have to use it."
 date: 2020-01-18T01:19:51+01:00
-draft: true
+draft: false
 tags: ["OneDrive", "Skype", "MS Teams", "office365", "Office Deployment Tool"]
 categories: [windows, itstuff]
 ---
 
 Are you sick of getting stuff you never ordered?  
 I had to set up a new Windows system and I remembered that the last time I tried to remove *Microsoft Teams*, *Skype for Business* and *OneDrive* from my Windows installation it was really annoying. So this time I had to go in a different direction. Instead of installing the complete package from *office.com*, I decided to install a custom package. Here is a short description how to do an office installation without the desired applications.
-
+<!--more-->
 ## Step 1: Office Deployment Tool
 
 The Office Deployment Tool is intended for administrators to customize the Office installation for use in local networks, but it will also do the trick for us.

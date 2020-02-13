@@ -1,6 +1,6 @@
 ---
 title: "about silvio"
-draft: true
+draft: false
 ---
 
 This blog is all about me, things that keep me busy, and especially things that I forget if I don't write them down!  

@@ -1,12 +1,14 @@
 ---
 title: "Securing ssh connections with ed25519 keys"
+subtitle: "I have a secure password, why isn't it enough?"
 date: 2019-06-20T19:11:27+01:00
-draft: true
+draft: false
 tags: ["security", "devEnv", "ssh", "ed25519","Cryptography"]
 categories: [itstuff]
 ---
 
-TODO: Introduction
+
+The problem is not that's to easy for you to log in, the problem is that everyone else can try it too. If there are no additional mechanisms in place, such as *fail2ban*, an attacker will have endless time to try to guess your password or even worse the root password.
 
 ## Step 1: Create a ssh key
 
@@ -15,7 +17,7 @@ First lets start with the key generation for your client
 ``` sh
 ssh-keygen -a 100 -t ed25519 -f ~/.ssh/example.com_id_ed25519
 ```
-
+<!--more-->
 The used options are
 
 - `-a` When saving a private key this option specifies the number of KDF (key derivation function) rounds used.  Higher numbers result in slower passphrase verification and increased resistance to brute-force password cracking (should the keys be stolen).
