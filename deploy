@@ -1,0 +1,8 @@
+#!/bin/sh
+
+sftp hugoTarget <<END
+cd deleteonerror.com
+put -r /mnt/p/deleteonerror/deleteonerror.com/public/*
+END
+
+exit 0
