@@ -1,6 +1,6 @@
 ---
 title: "50kb is enough!"
-subtitle: "About nginx caching and static content"
+subtitle: "About nginx caching and static content."
 date: 2020-02-13T21:51:10+01:00
 draft: false
 tags: ["nginx", "cacheing", "gzip", "mimetype", "StaticContent","hugo"]
@@ -81,3 +81,21 @@ different cache times and deactivate the access log.
 ```
 
 surprise, it's that simple!
+
+## Update
+
+Did i mention that it is not a good idea to cache xml and json?
+
+So we have one addition to our locations
+
+``` nginx
+
+    location ~* \.(?:xml|json) {
+      add_header Last-Modified $date_gmt;
+      add_header Cache-Control 'no-store, no-cache, must-revalidate, proxy-revalidate,max-age=0';
+      if_modified_since off;
+      expires off;
+      etag off;
+    }
+
+```

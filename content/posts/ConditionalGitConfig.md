@@ -1,6 +1,6 @@
 ---
 title: "Conditional Git Config"
-subtitle: "those who can't use their head must use their ... profile"
+subtitle: "Those who can't use their head must use their ... profile!"
 date: 2019-06-18T22:47:01+01:00
 draft: false
 tags: ["Git", "devEnv"]

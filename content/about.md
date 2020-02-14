@@ -1,6 +1,7 @@
 ---
 title: "about silvio"
 draft: false
+date: 2020-02-14T00:55:13+01:00
 ---
 
 This blog is all about me, things that keep me busy, and especially things that I forget if I don't write them down!  
