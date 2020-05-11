@@ -1,3 +1,3 @@
 [submodule "themes/hello-friend"]
 	path = themes/hello-friend
-	url = https://code.cyb3r.social/github-mirror/hugo-theme-hello-friend
+	url = git@code.cyb3r.social:skat/hugo-theme-hello-friend.git
