@@ -26,7 +26,13 @@ The used options are
 
 I chose a password for all of my keys and you should also consider to do so.
 
-## Step 2: configure the ssh key
+## Step 2: copy the key to your Server
+
+``` bash
+ssh-copy-id -i ~/.ssh/example.com_id_ed25519.pub [AwesomeServer]
+```
+
+## Step 3: configure the ssh key
 
 To configure your ssh keys you have to edit `~/.ssh/config`
 
@@ -57,10 +63,51 @@ PubkeyAuthentication yes
 IdentityFile ~/.ssh/github_id_ed25519
 ```
 
-## Step 3: Add the key to your ssh-agent
+## Step 4: Add the key to your ssh-agent
 
-The last optional step is to add your ssh key to your ssh agent
+The last optional step for the Client is to add your ssh key to your ssh agent
 
 ``` bash
 ssh-add -K ~/.ssh/example.com_id_ed25519
+```
+
+## Step 5: Configure the ssh daemon on the Server
+
+open the sshd config `/etc/ssh/sshd_config` and set the following values
+
+``` config
+# Disables the Password Authentication acording to RFC-4256 ('keyboard-interactive' authentication scheme)
+ChallengeResponseAuthentication no
+# Disables the Password Authentication acording to RFC-4252 ('password' authentication scheme)
+PasswordAuthentication no
+
+# Pam (Pluggable Authentication Modules) we dont want anything other than ssh key to work so we disable this setting
+UsePAM no
+
+# Deny root to logon via ssh
+PermitRootLogin no
+```
+
+And restart the SSH Daemon `sudo systemctl reload sshd`.
+
+## References
+
+[ssh config docu](https://www.ssh.com/ssh/sshd_config/)
+[RFC-4256- Generic Message Exchange Authentication for the Secure Shell Protocol (SSH)](https://www.rfc-editor.org/rfc/rfc4251.html)
+[RFC-4252 -  The Secure Shell (SSH) Authentication Protocol](https://www.rfc-editor.org/rfc/rfc4252.html)
+
+## Apendix
+
+### SSH JumpHost configuration
+
+To add the abillity to use one of your Servers as Jumphost to the others you can add the following line to the clients `~/.ssh/config`.
+
+``` config
+
+#----------------Servers
+Host [YourJumpHost]
+  ...
+  ...
+Host [AwesomeServer]
+  ProxyJump [YourJumpHost]
 ```
