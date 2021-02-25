@@ -15,6 +15,6 @@ npm i yarn
 
 build hugo with `hugo`
 
-deploy hugo from debian `sh /mnt/p/deleteonerror/deleteonerror.com/deploy`
+deploy hugo from Debian `sh /mnt/p/deleteonerror/deleteonerror.com/deploy`
 
 new post `hugo new posts/my-first-post.md`

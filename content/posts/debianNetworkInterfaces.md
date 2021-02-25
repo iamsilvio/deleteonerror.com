@@ -4,7 +4,7 @@ date: 2020-02-14T01:48:48+01:00
 draft: true
 ---
 
-#a static ip for your debian server 
+#a static ip for your debian server
 
 
 sudo nano /etc/network/interfaces

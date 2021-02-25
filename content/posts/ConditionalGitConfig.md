@@ -25,7 +25,7 @@ We have to change our gitconfig `~\.gitconfig`
   path = ./.gitconfig.corp
 ```
 
-The `includeIf` can be set to any directory in your file system, in my case my corp repost are all within the same root folder.
+The `includeIf` can be set to any directory in your file system, in my case my company repost are all within the same root folder.
 All repositories outside this folder will use my private git profile.  
   
 Let's create a secondary git config `~\.gitconfig.corp`  

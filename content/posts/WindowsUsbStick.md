@@ -7,16 +7,16 @@ tags: ["WindowsServer", "Windows", "Legacy", "Diskpart", "USB-Stick", "Boot"]
 categories: [windows, itstuff]
 ---
 
-If you have to install Windows Server 2019 manualy, you will come to the point where you ask yourself how you should install a ISO without burning the image to a physical disk and search this damned USB 2.0 External DVD drive which is covered by cobwebs in the cellar?
+If you have to install Windows Server 2019 manually, you will come to the point where you ask yourself how you should install a ISO without burning the image to a physical disk and search this damned USB 2.0 External DVD drive which is covered by cobwebs in the cellar?
 
 The Prerequisites are plain simple
 
 - windows Iso file
-- usb stick (at least 8GB)
+- USB stick (at least 8GB)
 <!--more-->
 ## Step 1: Format the Stick
 
-Open a Priviledged Powershell or Cmd
+Open a privileged PowerShell or Command line
 
 ``` cmd
 > diskpart
@@ -48,10 +48,10 @@ DISKPART > exit
 
 ## Step 2: make the drive bootable
 
-Thats realy easy microsoft provides some tooling for this.
+That's really easy Microsoft provides some tooling for this.
 All we need is the drive letter of your USB stick (In this sample I use U:)
 
-`bootsect /nt60 U:` will create the needed startcode
+`bootsect /nt60 U:` will create the needed start code
 
 ## Step 3: Moving files
 
@@ -62,12 +62,12 @@ If you are lucky and you can use extfat you can just move alle files with xcopy 
 
 and you are done.
 
-If you have to use Lagacy FAT32 we first have to split the `install.wim` because it is larger than FAT32 can handle.
+If you have to use Legacy FAT32 we first have to split the `install.wim` because it is larger than FAT32 can handle.
 The Split is done by:
 
 `Dism /Split-Image /ImageFile:W:\sources\install.wim /SWMFile:U:\sources\install.swm /FileSize:4000`
 
-After we have splitted the install file we can contiue with all other files but we have to add the large `install.wim` to an excludelist
+After we have split the install file we can continue with all other files but we have to add the large `install.wim` to an exclude list
 
 create a new text file and put `sources\install.wim` in the first line, close it and save (In this sample it's U:\exclude.txt)
 

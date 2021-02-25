@@ -17,7 +17,7 @@ The Office Deployment Tool is intended for administrators to customize the Offic
 - Official Microsoft download page [OfficeDeploymentTool](https://www.microsoft.com/en-us/download/details.aspx?id=49117)
 
 After you have downloaded the executable, run it and select a directory to extract the contents to.  
-You should see some *configuration-Office....xml* files and a setup.exe and thats all for Step 1.
+You should see some *configuration-Office....xml* files and a setup.exe and that's all for Step 1.
 
 ## Step 2: Configuration
 
@@ -52,13 +52,13 @@ My configuration file looks like this:
 Additional resources to the configuration file format can be found at [docs.microsoft.com](https://docs.microsoft.com/en-us/deployoffice/configuration-options-for-the-office-2016-deployment-tool)  
 The List of all Apps can also be found at the [docs](https://docs.microsoft.com/en-us/deployoffice/configuration-options-for-the-office-2016-deployment-tool#id-attribute-part-of-excludeapp-element)  
 
-Thats all for Step 2, after you have customized your installation we jump to the installation.
+That's all for Step 2, after you have customized your installation we jump to the installation.
 
 ## Step 3: Download and Installation
 
 Now there are only two things left, download the installation package and start the installation.  
   
-Open a command window or powershell console and navigate to the folder containing the setup.exe.
+Open a command window or PowerShell console and navigate to the folder containing the setup.exe.
 The command `.\setup.exe /download configuration-Office365-x64.xml` will download all needed files to the filesystem Path which you have defined as **SourcePath** in your XML configuration.  
 This is gonna take a while, so why don't you just sit back, relax and get yourself a cup of coffee.
   
@@ -66,6 +66,6 @@ You have done it right away, when the download is finished, you only have to exe
 `.\setup.exe /configure configuration-Office365-x64.xml`.  
 **Done**
 
-## Finaly
+## Finally
 
 You can keep the installation files if you think you will need them again, or you can simply delete both folders.

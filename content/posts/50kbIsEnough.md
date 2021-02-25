@@ -3,7 +3,7 @@ title: "50kb is enough!"
 subtitle: "About nginx caching and static content."
 date: 2020-02-13T21:51:10+01:00
 draft: false
-tags: ["nginx", "cacheing", "gzip", "mimetype", "StaticContent","hugo","webserver"]
+tags: ["nginx", "caching", "gzip", "mimetype", "StaticContent","hugo","webserver"]
 categories: [webserver, itstuff]
 ---
 

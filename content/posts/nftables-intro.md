@@ -1,5 +1,5 @@
 ---
-title: "Nftables firewall introduction (Debian 10 Buster)"
+title: "nftables firewall introduction (Debian 10 Buster)"
 subtitle: "Do not let tables confuse you!"
 date: 2020-02-21T20:57:00+01:00
 draft: false
@@ -31,7 +31,7 @@ $ sudo systemctl enable nftables.service
 
 So we have a firewall, we're done!
 
-The default configuration file is in `/etc/nftables.conf', so we dive into the configuration.
+The default configuration file is in `/etc/nftables.conf`, so we dive into the configuration.
 
 Here is a basic configuration file for a web server with everything you need to get started.
 

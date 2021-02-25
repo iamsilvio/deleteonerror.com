@@ -36,7 +36,7 @@ ssh-copy-id -i ~/.ssh/example.com_id_ed25519.pub [AwesomeServer]
 
 To configure your ssh keys you have to edit `~/.ssh/config`
 
-I prefere to have a general config section and just specify the host specific stuff per host
+I prefer to have a general config section and just specify the host specific stuff per host
 
 ``` config
 Host *
@@ -92,15 +92,15 @@ And restart the SSH Daemon `sudo systemctl reload sshd`.
 
 ## References
 
-[ssh config docu](https://www.ssh.com/ssh/sshd_config/)
+[ssh config documentation](https://www.ssh.com/ssh/sshd_config/)
 [RFC-4256- Generic Message Exchange Authentication for the Secure Shell Protocol (SSH)](https://www.rfc-editor.org/rfc/rfc4251.html)
 [RFC-4252 -  The Secure Shell (SSH) Authentication Protocol](https://www.rfc-editor.org/rfc/rfc4252.html)
 
-## Apendix
+## Appendix
 
 ### SSH JumpHost configuration
 
-To add the abillity to use one of your Servers as Jumphost to the others you can add the following line to the clients `~/.ssh/config`.
+To add the ability to use one of your Servers as Jump host to the others you can add the following line to the clients `~/.ssh/config`.
 
 ``` config
 
