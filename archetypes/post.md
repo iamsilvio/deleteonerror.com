@@ -4,9 +4,8 @@ subtitle: ""
 date: {{ .Date }}
 draft: true
 tags: ["", ""]
-categories: []
+categories: [windows, itstuff]
 summary: 
-author_twitter_handle:
-og_image:
-og_description:
+
+twitter_creator_id: 94538574
 ---

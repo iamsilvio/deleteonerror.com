@@ -7,7 +7,7 @@ theme: deleteonerror
 menu:
   main:
     - identifier: about
-      name: /about
+      name: about
       url: /about
 
 params:

@@ -1,15 +1,19 @@
 ---
-title: "hostnamectl"
+title: "about | hostnamectl"
 draft: false
-date: 2021-05-13T00:55:13+01:00
+
 twitter_creator_id: 94538574
 ---
 
 This blog is all about me, things that keep me busy, and especially things that I forget if I don't write them down!  
   
-Who I am?  
-A creature that has to get along on this planet, a nerd, a gamer, a cyclist and from time to time a normal person.  
-  
+``` shell
+$ hostnamectl
+
+# A creature that has to get along on this planet, 
+# a nerd, a gamer, a cyclist and from time to time a normal person.  
+```
+
 *Enjoy the journey and throw kindness around like confetti!*  
   
 > The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
