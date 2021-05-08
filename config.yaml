@@ -1,0 +1,70 @@
+baseURL: https://deleteonerror.com
+languageCode: en-US
+title: delete on error
+
+theme: deleteonerror
+
+menu:
+  main:
+    - identifier: about
+      name: /about
+      url: /about
+
+params:
+  defaultTheme: dark
+  showMenueItems: 2
+  showReadingTime: false
+  contentTypeName: posts
+  subtitle: Experiment -> Fail -> Learn -> Repeat
+  logo:
+    logoText: delete on error
+    logoHomeLink: /
+  twitter: https://twitter.com/deleteonerror
+  twitter_handle: '@deleteonerror'
+  github: https://github.com/deleteonerror
+  author: deleteonerror
+  keywords:
+    - Cryptography
+    - Authenticity
+    - Security
+    - Debian
+    - Linux
+    - Golang
+
+
+permalinks:
+    posts: /:year/:month/:slug/
+    page: /:slug/
+
+
+enableRobotsTXT: true
+
+minify:
+  disableCSS: false
+  disableHTML: false
+  disableJS: false
+  disableJSON: false
+  disableSVG: false
+  disableXML: false
+  minifyOutput: true
+  tdewolff:
+    css:
+      keepCSS2: true
+      precision: 0
+    html:
+      keepComments: false
+      keepConditionalComments: true
+      keepDefaultAttrVals: true
+      keepDocumentTags: true
+      keepEndTags: true
+      keepQuotes: false
+      keepWhitespace: false
+    js:
+      keepVarNames: false
+      precision: 0
+    json:
+      precision: 0
+    svg:
+      precision: 0
+    xml:
+      keepWhitespace: false
