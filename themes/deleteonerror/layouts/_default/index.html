@@ -37,7 +37,6 @@
           <span class="post-read-time">� {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span>
         {{ end }}
       </div>
-
       {{ if .Params.tags }}
         <span class="post-tags">
           {{ range .Params.tags }}

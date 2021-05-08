@@ -30,6 +30,8 @@ params:
     - Debian
     - Linux
     - Golang
+    - nginx
+
 
 
 permalinks:

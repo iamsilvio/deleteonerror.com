@@ -2,7 +2,13 @@
 {{ $prism := resources.Get "/js/prism.js" }}
 {{ $theme := resources.Get "/js/theme.js" }}
 {{ $main := resources.Get "/js/main.js" }}
-<!-- {{ $menu := resources.Get "/js/menu.js" }} -->
 
-{{ $fullscript := slice $prism $theme $main | resources.Concat "/js/vendor.js" | minify | fingerprint "sha512" }}
+{{ $fullscript := slice $theme $main | resources.Concat "/js/vendor.js" | minify | fingerprint "sha512" }}
 <script src="{{ $fullscript.RelPermalink }}" integrity="{{ $fullscript.Data.Integrity }}"></script>
+
+
+
+{{ if (isset .Params "code") }}
+{{ $prismmin := slice $prism | resources.Concat "/js/prism.js" | minify | fingerprint "sha512" }}
+<script src="{{ $prismmin.RelPermalink }}" integrity="{{ $prismmin.Data.Integrity }}"></script>
+{{ end }}
