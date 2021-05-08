@@ -7,5 +7,5 @@
 <link rel="preload" href="{{ "/fonts/Inter-BoldItalic.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
 
 <!-- Fonts -->
-{{ $stylemain := resources.Get "css/style.scss" | toCSS | postCSS (dict "use" "autoprefixer") | minify | fingerprint "sha512" }}
+{{ $stylemain := resources.Get "scss/style.scss" | toCSS | postCSS (dict "use" "autoprefixer") | minify | fingerprint "sha512" }}
 <link rel="stylesheet" href="{{ $stylemain.RelPermalink }}" integrity="{{ $stylemain.Data.Integrity }}">
