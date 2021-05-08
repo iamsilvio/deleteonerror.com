@@ -5,11 +5,11 @@
   padding: 20px;
   margin: 20px auto;
 
-  @include media(">tablet","<desktop") {
+  @include media('>660px', '<880px') {
     max-width: 660px;
   }
 
-  @include media("<tablet") {
+  @include media('<660px') {
     max-width: 360px;
   }
 
@@ -21,7 +21,7 @@
     font-size: 1rem;
     margin-bottom: 10px;
 
-    @include media("<tablet") {
+    @include media('<660px') {
       font-size: 0.85rem;
     }
   }
@@ -29,7 +29,7 @@
   &-title {
     font-size: 2.625rem;
     margin: 0 0 20px;
-    @include media("<tablet") {
+    @include media('<660px') {
       font-size: 2rem;
     }
 
