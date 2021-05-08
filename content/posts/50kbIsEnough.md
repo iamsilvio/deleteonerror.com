@@ -6,6 +6,8 @@ draft: false
 tags: ["nginx", "caching", "gzip", "mimetype", "StaticContent","hugo","webserver"]
 categories: [webserver, itstuff]
 
+
+twitter_handle: '@skat'
 aliases:
     - /posts/50kbisenough/
 ---

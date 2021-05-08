@@ -1,7 +1,8 @@
 ---
 title: "about silvio"
 draft: false
-date: 2020-02-14T00:55:13+01:00
+date: 2021-05-13T00:55:13+01:00
+twitter_handle: '@skat'
 ---
 
 This blog is all about me, things that keep me busy, and especially things that I forget if I don't write them down!  
@@ -19,6 +20,5 @@ A creature that has to get along on this planet, a nerd, a gamer, a cyclist and 
 ## Links for stalkers
 
 - [Twitter](https://twitter.com/skat)
-- [Mastodon](https://cyb3r.social/@silvio)
 - [GitHub](https://github.com/iamsilvio)
 - [Spotify](https://open.spotify.com/user/skat-)

@@ -6,6 +6,7 @@ draft: false
 tags: ["WindowsServer", "Windows", "Legacy", "Diskpart", "USB-Stick", "Boot"]
 categories: [windows, itstuff]
 
+twitter_handle: '@skat'
 aliases:
     - /posts/WindowsUsbStick/
 ---
@@ -21,7 +22,7 @@ The Prerequisites are plain simple
 
 Open a privileged PowerShell or Command line
 
-``` cmd
+``` shell
 > diskpart
 
 # list all disks

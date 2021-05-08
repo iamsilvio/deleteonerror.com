@@ -6,6 +6,7 @@ draft: false
 tags: ["webserver", "selfhosted", "oss"]
 categories: [itstuff]
 
+twitter_handle: '@skat'
 aliases:
     - /posts/hedgedoc-nextcloud/
 ---
@@ -58,7 +59,7 @@ Now lets create the nginx site configuration
   
 My config looks like this:
 
-``` config
+``` nginx
 map $http_upgrade $connection_upgrade {
         default upgrade;
         ''      close;
@@ -193,7 +194,7 @@ Edit `config.json` to your preferences, here is mine:
 
 edit the database configuration in `.sequelizerc`, the important part is the URL segment, this has to be your Database Connection String
 
-``` json
+``` config
 ...
 
 'url': 'mariadb://USER:PASSWORD@localhost:3306/DATABASENAME'
@@ -212,7 +213,7 @@ First we need to create a systemd configuration file `sudo nano /lib/system/syst
   
 My configuration looks like this
 
-``` config
+``` ini
 [Unit]
 Description=hedgedoc
 After=network.target

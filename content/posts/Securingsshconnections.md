@@ -6,6 +6,7 @@ draft: false
 tags: ["security", "devEnv", "ssh", "ed25519","Cryptography"]
 categories: [itstuff]
 
+twitter_handle: '@skat'
 aliases:
     - /posts/Securingsshconnections/
 ---
@@ -17,7 +18,7 @@ The problem is not that's to easy for you to log in, the problem is that everyon
 
 First lets start with the key generation for your client
 
-``` sh
+``` shell
 ssh-keygen -a 100 -t ed25519 -f ~/.ssh/example.com_id_ed25519
 ```
 <!--more-->
@@ -31,7 +32,7 @@ I chose a password for all of my keys and you should also consider to do so.
 
 ## Step 2: copy the key to your Server
 
-``` bash
+``` shell
 ssh-copy-id -i ~/.ssh/example.com_id_ed25519.pub [AwesomeServer]
 ```
 
@@ -41,7 +42,7 @@ To configure your ssh keys you have to edit `~/.ssh/config`
 
 I prefer to have a general config section and just specify the host specific stuff per host
 
-``` config
+``` shell
 Host *
      ForwardAgent no
      ForwardX11 no
@@ -70,7 +71,7 @@ IdentityFile ~/.ssh/github_id_ed25519
 
 The last optional step for the Client is to add your ssh key to your ssh agent
 
-``` bash
+``` shell
 ssh-add -K ~/.ssh/example.com_id_ed25519
 ```
 
@@ -78,7 +79,7 @@ ssh-add -K ~/.ssh/example.com_id_ed25519
 
 open the sshd config `/etc/ssh/sshd_config` and set the following values
 
-``` config
+``` shell
 # Disables the Password Authentication acording to RFC-4256 ('keyboard-interactive' authentication scheme)
 ChallengeResponseAuthentication no
 # Disables the Password Authentication acording to RFC-4252 ('password' authentication scheme)
@@ -105,7 +106,7 @@ And restart the SSH Daemon `sudo systemctl reload sshd`.
 
 To add the ability to use one of your Servers as Jump host to the others you can add the following line to the clients `~/.ssh/config`.
 
-``` config
+``` shell
 
 #----------------Servers
 Host [YourJumpHost]

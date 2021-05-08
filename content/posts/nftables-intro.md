@@ -6,6 +6,7 @@ draft: false
 tags: ["security", "nftable", "ssh", "firewall","webserver"]
 categories: [itstuff]
 
+twitter_handle: '@skat'
 aliases:
     - /posts/nftables-intro/
 ---
@@ -19,26 +20,26 @@ To make it easier to get started, here is a short guide on how to get your firew
 
 I mentioned that Debian uses the nftable framework by default, but it is not enabled!
 
-To enable the default firewall you have to do the following:
+To enable the default firewall, you have to do the following:
 
 ``` shell
 
 $ sudo apt install nftables
 
-# you should start nftables at system start so you should
+# You should start nftables at system start, so you should enable it.
 $ sudo systemctl enable nftables.service
 
 ```
 
 ## Step 2: Configuration
 
-So we have a firewall, we're done!
+So, we have a firewall, we're done!
 
 The default configuration file is in `/etc/nftables.conf`, so we dive into the configuration.
 
 Here is a basic configuration file for a web server with everything you need to get started.
 
-``` conf
+``` shell
 
 #!/usr/sbin/nft -f
 
@@ -99,9 +100,9 @@ If you have a dynamic IP, you have to find another solution to reduce the attack
 
 ## Step 3: Starting the firewall
 
-If you check the status of your firewall `sudo service nftables status`, you will see that it is not yet running.
-So let's reload the configuration by running `sudo nft -f /etc/nftables.conf/` and check it by running `sudo nft list table inet filter -n -a`.
-
+If you check the status of your firewall with `sudo service nftables status`, you will see that it is not yet running.  
+So let's reload the configuration by running `sudo nft -f /etc/nftables.conf` and check if the configuration is correctly loaded by running `sudo nft list table inet filter -n -a`.
+  
 If there are no errors, we start the firewall by running `sudo service nftables start`!
-
+  
 If you want to secure your ssh connection even more you can continue with [Securing ssh connections with ed25519 keys]({{< ref "Securingsshconnections.md" >}})

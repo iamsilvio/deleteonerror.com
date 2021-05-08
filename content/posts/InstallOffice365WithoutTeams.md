@@ -6,6 +6,7 @@ draft: false
 tags: ["OneDrive", "Skype", "MS Teams", "office365", "Office Deployment Tool"]
 categories: [windows, itstuff]
 
+twitter_handle: '@skat'
 aliases:
     - /posts/InstallOffice365WithoutTeams/
 ---
