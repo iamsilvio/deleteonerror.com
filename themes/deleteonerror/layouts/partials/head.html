@@ -35,9 +35,9 @@
   <meta property="article:author" content="{{ .Site.Params.author }}">
 {{ end }}
 
-{{ $title := ( printf "%s - %s" .Title .Site.Params.Subtitle ) }}
+{{ $ctitle := ( printf "%s - %s" .Title .Site.Params.Subtitle ) }}
 {{ if not .IsHome }}
-  {{ $title = ( printf "%s :: %s - %s" .Title .Site.Title .Site.Params.Subtitle) }}
+  {{ $ctitle = ( printf "%s :: %s - %s" .Title .Site.Title .Site.Params.Subtitle) }}
 {{ end }}
 
 <!-- Twitter Card and open Graph-->
@@ -56,4 +56,4 @@
 
 <link rel="canonical" href="{{ .Permalink }}" />
 
-<title>{{ $title }}</title>
+<title>{{ $ctitle }}</title>

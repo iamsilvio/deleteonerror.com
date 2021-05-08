@@ -20,6 +20,8 @@
   &-meta {
     font-size: 1rem;
     margin-bottom: 10px;
+    text-align: right;
+    padding-bottom: 6px;
 
     @include media('<660px') {
       font-size: 0.85rem;
@@ -28,7 +30,7 @@
 
   &-title {
     font-size: 2.625rem;
-    margin: 0 0 20px;
+    margin: 0;
     @include media('<660px') {
       font-size: 2rem;
     }
@@ -38,11 +40,30 @@
     }
   }
 
+  &-subtitle {
+    font-size: 1.8rem;
+    color: var(--color-secondary);
+    margin-left: 33 px;
+    @include media('<660px') {
+      font-size: 1.5rem;
+      margin-left: 0;
+    }
+  }
+
   &-tags {
     display: block;
+    
+    margin-top: -25px;
+    margin-left: 13px;
     margin-bottom: 20px;
     font-size: 1rem;
     opacity: 0.8;
+
+    @include media('<660px') {
+      margin-left: 0;
+      margin-top: 0;
+    }
+
 
     a {
       text-decoration: none;

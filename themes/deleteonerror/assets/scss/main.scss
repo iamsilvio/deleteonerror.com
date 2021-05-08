@@ -134,12 +134,13 @@ figure {
 code,
 kbd {
   font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
-  background: var(--background-secondary);
-  padding: 1px 6px;
+  background-color: #272822;
+  padding: 2px 6px;
   margin: 0 2px;
   border-radius: 5px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: normal;
+  color: #ccc;
 
   code,
   kbd {
