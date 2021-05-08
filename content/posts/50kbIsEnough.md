@@ -7,7 +7,7 @@ tags: ["nginx", "caching", "gzip", "mimetype", "StaticContent","hugo","webserver
 categories: [webserver, itstuff]
 
 
-twitter_handle: '@skat'
+twitter_creator_id: 94538574
 aliases:
     - /posts/50kbisenough/
 ---

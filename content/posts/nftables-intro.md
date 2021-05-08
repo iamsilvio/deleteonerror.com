@@ -6,7 +6,7 @@ draft: false
 tags: ["security", "nftable", "ssh", "firewall","webserver"]
 categories: [itstuff]
 
-twitter_handle: '@skat'
+twitter_creator_id: 94538574
 aliases:
     - /posts/nftables-intro/
 ---

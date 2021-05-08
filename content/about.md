@@ -1,8 +1,8 @@
 ---
-title: "about silvio"
+title: "hostnamectl"
 draft: false
 date: 2021-05-13T00:55:13+01:00
-twitter_handle: '@skat'
+twitter_creator_id: 94538574
 ---
 
 This blog is all about me, things that keep me busy, and especially things that I forget if I don't write them down!  

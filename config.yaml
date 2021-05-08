@@ -20,7 +20,7 @@ params:
     logoText: delete on error
     logoHomeLink: /
   twitter: https://twitter.com/deleteonerror
-  twitter_handle: '@deleteonerror'
+  twitter_site_id: 783402198
   github: https://github.com/deleteonerror
   author: silvio
   keywords:

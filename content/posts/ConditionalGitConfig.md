@@ -6,7 +6,7 @@ draft: false
 tags: ["Git", "devEnv"]
 categories: [itstuff]
 
-twitter_handle: '@skat'
+twitter_creator_id: 94538574
 aliases:
     - /posts/ConditionalGitConfig/
 ---

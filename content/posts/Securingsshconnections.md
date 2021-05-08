@@ -6,7 +6,7 @@ draft: false
 tags: ["security", "devEnv", "ssh", "ed25519","Cryptography"]
 categories: [itstuff]
 
-twitter_handle: '@skat'
+twitter_creator_id: 94538574
 aliases:
     - /posts/Securingsshconnections/
 ---
