@@ -1,0 +1,51 @@
+.header {
+  background: var(--header);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 20px;
+
+  &__right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @include media("<tablet") {
+      flex-direction: row-reverse;
+    }
+
+    svg {
+      margin-left: 5px;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 760px;
+    max-width: 100%;
+  }
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.theme-toggler {
+  fill: currentColor;
+}
+
+svg {
+  &.rss-icon {
+    width: 31px;
+    fill: #a9a9b3;
+    margin-top: 6px;
+  }
+}

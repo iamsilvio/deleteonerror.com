@@ -1,0 +1,17 @@
+<footer class="footer">
+  <div class="footer__inner">
+    {{ if $.Site.Copyright }}
+      <div class="copyright copyright--user">{{ $.Site.Copyright | safeHTML }}</div>
+      {{ else }}
+      {{ partial "logo.html" . }}
+      <div class="copyright">
+        <span>© {{ now.Year }} Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a></span>
+        <span>Theme created by
+          <a href="https://twitter.com/skat" target="_blank" rel="noopener">skat</a></span>
+      </div>
+    {{ end }}
+  </div>
+</footer>
+
+
+{{- partial "footer_bundle.html" . }}

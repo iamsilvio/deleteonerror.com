@@ -1,0 +1,8 @@
+<!-- ECMA -->
+{{ $prism := resources.Get "/js/prism.js" }}
+{{ $theme := resources.Get "/js/theme.js" }}
+{{ $main := resources.Get "/js/main.js" }}
+<!-- {{ $menu := resources.Get "/js/menu.js" }} -->
+
+{{ $fullscript := slice $prism $theme $main | resources.Concat "/js/vendor.js" | minify | fingerprint "sha512" }}
+<script src="{{ $fullscript.RelPermalink }}" integrity="{{ $fullscript.Data.Integrity }}"></script>

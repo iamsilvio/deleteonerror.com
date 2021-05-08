@@ -1,0 +1,11 @@
+<!-- Fonts -->
+<link rel="preload" href="{{ "/fonts/Inter-Italic.woff2" | absURL }}" as="font" type="font/woff2"  crossorigin>
+<link rel="preload" href="{{ "/fonts/Inter-Regular.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "/fonts/Inter-Medium.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "/fonts/Inter-MediumItalic.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "/fonts/Inter-Bold.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "/fonts/Inter-BoldItalic.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
+
+<!-- Fonts -->
+{{ $stylemain := resources.Get "css/style.scss" | toCSS | postCSS (dict "use" "autoprefixer") | minify | fingerprint "sha512" }}
+<link rel="stylesheet" href="{{ $stylemain.RelPermalink }}" integrity="{{ $stylemain.Data.Integrity }}">

@@ -1,0 +1,47 @@
+<!--  OpenGraph and Twitter Card Stuff starts here -->
+{{ $permalink := "/meta/apple-touch-icon-precomposed.png" | absURL }}
+{{ $imgalt := "delete on erroror Logo"}}
+
+{{ if (isset .Params "og_image") }}
+  {{ $permalink = print .Type "s/" .Params.og_image | absURL }}
+  {{ if (isset .Params "og_description") }}
+    {{ $imgalt = .Params.og_description }}
+  {{ end }}
+{{ end }}
+
+
+  <!-- Twitter card meta tags can be validated at https://cards-dev.twitter.com/validator -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="{{ .Site.Params.twitter_handle}}">
+
+{{ if (isset .Params "twitter_handle") }}
+  <meta name="twitter:creator" content="{{ .Params.author_twitter_handle }}">
+{{ else }}
+  <meta name="twitter:creator" content="{{ .Site.Params.twitter_handle }}">
+{{ end }}
+
+<meta name="twitter:url" content="{{ .Permalink }}">
+<meta name="twitter:title" content="{{ .Title }}">
+
+  <!-- add tags to description -->
+{{ if (isset .Params "tags") }}
+  {{ $tagstring := " " }}
+  {{ range  .Params.tags}}
+    {{ $tagstring = (print $tagstring "#" (replace . " " "" ) " ") }}
+  {{ end }}
+  <meta name="twitter:description" content="{{ print (.Summary | plainify | truncate (sub 240 (len $tagstring))) $tagstring }}">
+  {{ else }}
+  <meta name="twitter:description" content="{{ .Summary | plainify | truncate 200 }}">
+{{ end }}
+
+<meta name="twitter:image" content="{{ $permalink }}">
+<meta name="twitter:image:alt" content="{{ $imgalt }}">
+
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ .Summary | plainify | truncate 150 }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="{{ .Site.LanguageCode }}">
+<meta property="og:image" content="{{  $permalink }}">
+<meta property="og:image:alt" content="{{ $imgalt }}">

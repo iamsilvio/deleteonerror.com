@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{{ hugo.Generator }}
+
+<!-- SEO stuff -->
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="google" content="nositelinkssearchbox">
+  <meta name="google" content="notranslate">
+
+  <meta name="rating" content="General">
+  <meta name="referrer" content="no-referrer">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-dns-prefetch-control" content="off">
+
+
+    <!-- Description -->
+{{ if lt (len .Summary) 150 }}
+  <meta name="description" content="{{ .Summary | plainify }}">
+{{ else }}
+  <meta name="description" content="{{ .Summary | plainify | truncate 150 }}">
+{{ end }}
+
+    <!-- Keywords -->
+{{ if (isset .Params "tags") }}
+  <meta name="keywords" content={{ delimit .Params.tags ", " }} />
+{{ else }}
+  <meta name="keywords" content={{ delimit .Site.Params.keywords ", " }} />
+{{ end }}
+
+    <!-- Author -->
+{{ if (isset .Params "author") }}
+  <meta property="article:author" content="{{ .Params.author }}">
+{{ else }}
+  <meta property="article:author" content="{{ .Site.Params.author }}">
+{{ end }}
+
+{{ $title := ( printf "%s - %s" .Title .Site.Params.Subtitle ) }}
+{{ if not .IsHome }}
+  {{ $title = ( printf "%s :: %s - %s" .Title .Site.Title .Site.Params.Subtitle) }}
+{{ end }}
+
+<!-- Twitter Card and open Graph-->
+{{- partial "head_openGraph.html" . }}
+
+<!-- Icons -->
+{{- partial "head_favicon.html" . }}
+
+<!-- RSS | JSON -->
+{{ range .AlternativeOutputFormats -}}
+  {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+{{ end -}}
+
+<!-- head custom -->
+{{- partial "head_bundling.html" . }}
+
+<link rel="canonical" href="{{ .Permalink }}" />
+
+<title>{{ $title }}</title>
