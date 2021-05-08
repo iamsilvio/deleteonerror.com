@@ -5,6 +5,9 @@ date: 2020-02-14T00:55:13+01:00
 draft: false
 tags: ["WindowsServer", "Windows", "Legacy", "Diskpart", "USB-Stick", "Boot"]
 categories: [windows, itstuff]
+
+aliases:
+    - /posts/WindowsUsbStick/
 ---
 
 If you have to install Windows Server 2019 manually, you will come to the point where you ask yourself how you should install a ISO without burning the image to a physical disk and search this damned USB 2.0 External DVD drive which is covered by cobwebs in the cellar?

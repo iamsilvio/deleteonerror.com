@@ -5,6 +5,9 @@ date: 2020-02-13T21:51:10+01:00
 draft: false
 tags: ["nginx", "caching", "gzip", "mimetype", "StaticContent","hugo","webserver"]
 categories: [webserver, itstuff]
+
+aliases:
+    - /posts/50kbisenough/
 ---
 
 Now that I have found a new blog software it is time to get the web server up and running.

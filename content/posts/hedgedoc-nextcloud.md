@@ -5,6 +5,9 @@ date: 2021-04-05T13:32:31+02:00
 draft: false
 tags: ["webserver", "selfhosted", "oss"]
 categories: [itstuff]
+
+aliases:
+    - /posts/hedgedoc-nextcloud/
 ---
 
 ## Preconditions

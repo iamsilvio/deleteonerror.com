@@ -5,6 +5,9 @@ date: 2019-06-20T19:11:27+01:00
 draft: false
 tags: ["security", "devEnv", "ssh", "ed25519","Cryptography"]
 categories: [itstuff]
+
+aliases:
+    - /posts/Securingsshconnections/
 ---
 
 

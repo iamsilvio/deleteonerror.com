@@ -5,6 +5,9 @@ date: 2019-06-18T22:47:01+01:00
 draft: false
 tags: ["Git", "devEnv"]
 categories: [itstuff]
+
+aliases:
+    - /posts/ConditionalGitConfig/
 ---
 
 You have once again committed with your private mail address in a repo where you should actually use your company profile?  

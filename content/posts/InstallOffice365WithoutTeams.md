@@ -5,6 +5,9 @@ date: 2020-01-18T01:19:51+01:00
 draft: false
 tags: ["OneDrive", "Skype", "MS Teams", "office365", "Office Deployment Tool"]
 categories: [windows, itstuff]
+
+aliases:
+    - /posts/InstallOffice365WithoutTeams/
 ---
 
 Are you sick of getting stuff you never ordered?  

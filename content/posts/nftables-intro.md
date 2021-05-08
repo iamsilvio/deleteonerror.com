@@ -5,6 +5,9 @@ date: 2020-02-21T20:57:00+01:00
 draft: false
 tags: ["security", "nftable", "ssh", "firewall","webserver"]
 categories: [itstuff]
+
+aliases:
+    - /posts/nftables-intro/
 ---
 
 The first thing everyone should do before connecting to the Internet is to set up a proper firewall.
