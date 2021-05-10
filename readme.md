@@ -1,6 +1,6 @@
 # Delete on error
 
-new post `hugo new posts/my-first-post.md`
+new post `hugo new posts/TOPIC/index.md`
 
 ## Useful links
 
