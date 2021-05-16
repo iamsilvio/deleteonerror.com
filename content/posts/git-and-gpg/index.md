@@ -1,5 +1,5 @@
 ---
-date: 2021-05-16T15:55:06+02:00
+date: 2021-05-16T23:30:00+02:00
 draft: false
 
 title: Sign your Git commit with a PGP key
@@ -13,20 +13,25 @@ twitter_creator_id: 94538574
 ---
 
 Authenticity is a psychological and philosophical concept.
-According to existential philosophy, the lack of authenticity is a sign of lack of trustworthiness.
+According to existential philosophy, the lack of authenticity is a sign of lack of trustworthiness.  
+  
+We should not only be authentic in what we do, but also in what we produce.  
+  
+In early 2021, a software was reported to have malicious code introduced through changes made by well known developers. In this particular case, the changes were noticed in time, but that was rather lucky. If an attacker picks a better time to make such changes and catches the right reviewer, it can rapidly lead to serious vulnerabilities that are difficult to detect.
 
-We should not only be authentic in what we do, but also in what we produce.
-There has been news that the source code of a software has been compromised, which is simply the result of a bad trust between the code management and the developer. There is no way to ensure that whoever is contributing the code is who they say they are, right? Of course there is a way, everything digital can be signed, after that, it is of course the task of the build system to validate them, but that is another challenge.
+> The commits were made to the php-src repo under the account names of two well-known PHP developers, Rasmus Lerdorf and Nikita Popov. [arstechnica](https://web.archive.org/web/20210424213823/https://arstechnica.com/gadgets/2021/03/hackers-backdoor-php-source-code-after-breaching-internal-git-server/)
+  
+There is no way to ensure that whoever is contributing the code is who they say they are, right? Of course there is a way, everything digital can be signed, after that, it is of course the task of the build system to validate them, but that is another challenge.
 
 So signing your public work helps to trust you and your work.
 
-How to generate PGP keys will be part of another Blog post.
+How to generate PGP keys and what a YubiKey is will be part of another blog post.
 
 The topic of this post will be how to use a PGP key stored on a Yubikey to sign your commits on Windows and macOS.
 
 ## On MacOS 11.*
 
-Install gpg `brew install gnupg`, you don't need to specify a version, the `gnupg` package references always the latest version of "GNU Pretty Good Privacy (PGP) package"  
+Install gpg `brew install gnupg`, you don't need to specify a version. The `gnupg` package references always the latest version of "GNU Pretty Good Privacy (PGP) package".  
 
 I have some gnupg config files at my [dotfiles repository](https://github.com/iamsilvio/dotfiles/tree/main/tux/.gnupg) which should be a good starting point. Copy them into `~\.gnupg` and you should be fine. Since Gnupg 2* I had to add a `scdaemon.conf` to get my Yubikey to work, but that's part of my dotfiles and I will update the config if needed.
 
@@ -64,7 +69,7 @@ Import your public key
 ``` bash
 gpg --import PATH_TO_YOUR_PUBLIC_KEY
 
-# gpg: key 8819EC79BB0D040E: public key "neo <neo@matrix.com>" imported
+# gpg: key FFFFFFFFFFFFFFFF: public key "neo <neo@matrix.com>" imported
 # gpg: DBG: Using CREATE_BREAKAWAY_FROM_JOB flag
 # gpg: Total number processed: 1
 # gpg:               imported: 1
@@ -117,7 +122,7 @@ gpgconf --launch gpg-agent
 
 On Windows I use `scoop` as my package manager of choice, so to install `pgp4win` you just have to `scoop install gpg4win`. If you don't use a package manager you can download [gpg4win](https://www.gpg4win.org/) at this link.
 
-I have some gnupg config files at my [dotfiles repository](https://github.com/iamsilvio/dotfiles/tree/main/tux/.gnupg) which should be a good staring point. Copy them into `C:\Users\%USERNAME%\AppData\Roaming\gnupg` and you should be fine, except on Windows I had to add the following two lines to the `scdaemon.conf`
+I have some gnupg config files at my [dotfiles repository](https://github.com/iamsilvio/dotfiles/tree/main/tux/.gnupg) which should be a good staring point. Copy them into `%userprofile%\AppData\Roaming\gnupg` and you should be fine, except on Windows I had to add the following two lines to the `scdaemon.conf`
 
 ``` text
 reader-port "Yubico YubiKey"
@@ -158,7 +163,7 @@ Import your public key
 ``` bash
 gpg --import PATH_TO_YOUR_PUBLIC_KEY
 
-# gpg: key 8819EC79BB0D040E: public key "neo <neo@matrix.com>" imported
+# gpg: key FFFFFFFFFFFFFFFF: public key "neo <neo@matrix.com>" imported
 # gpg: DBG: Using CREATE_BREAKAWAY_FROM_JOB flag
 # gpg: Total number processed: 1
 # gpg:               imported: 1
@@ -204,7 +209,7 @@ Tell git to use gpg by
 ### Windows specific Git config
 
 Git brings its own gpg version, so we have to point git to the right one  
-`git config --global gpg.program C:\Users\sk\scoop\apps\gpg4win\current\GnuPG\bin\gpg.exe`
+`git config --global gpg.program %userprofile%\scoop\apps\gpg4win\current\GnuPG\bin\gpg.exe`
 
 ### Universal config
 
@@ -225,5 +230,5 @@ and a special one to make `git log` a litle bit more awesome
 
 ### Github
 
-Navigate  to [settings >keys](https://github.com/settings/keys) and upload your public gpg key.
+Navigate  to [settings >keys](https://github.com/settings/keys) and upload your public pgp key.
 A niche addition, at the bottom of the page you can set `Flag unsigned commits as unverified`
