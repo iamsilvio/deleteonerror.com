@@ -6,9 +6,20 @@ theme: deleteonerror
 
 menu:
   main:
+    - identifier: posts
+      name: blog
+      url: /posts
+      weight: 4
+    - identifier: essays
+      name: essays
+      url: /essays
+      weight: 5
     - identifier: about
       name: about
       url: /about
+      weight: 10
+
+
 
 params:
   defaultTheme: dark
@@ -37,7 +48,7 @@ params:
 permalinks:
     posts: /:year/:month/:slug/
     page: /:slug/
-
+    essays: /:year/:month/:slug/
 
 enableRobotsTXT: true
 

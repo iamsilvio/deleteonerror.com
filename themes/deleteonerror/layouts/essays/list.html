@@ -1,0 +1,43 @@
+{{ define "main" }}
+
+<h1>{{ with .Site.GetPage "section" "essays" }}{{ .Title }}{{ end }}</h1>
+
+{{.Content}}
+
+<div class="essay-list">
+  {{ range (where .Site.RegularPages.ByTitle "Section" "essays" ) }}
+  <div class="essay-list-item">
+    <a href="{{ .Permalink }}">
+      {{ with .Resources }}
+        {{ with .GetMatch "{cover,*.jpg,*.png,*.jpeg}" }}
+          {{ $alt := .Params.alt }}
+          {{ $cover := .Resize "400x" }}
+          {{ with $cover }}
+            <figure class="essay-cover">
+              <img src="{{ .Permalink }}" alt="{{ $alt }}" />
+            </figure>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      {{ .Params.title | humanize | title }}
+    </a>
+
+    <div class="essay-content">
+      {{ with .Description }}
+        {{ . | markdownify }}
+        {{ else }}
+          {{ if .Truncated }}
+            {{ .Summary }}
+          {{ end }}
+        {{ end }}
+    </div>
+    {{ if not .Params.hideReadMore }}
+      <div>
+        <a class="read-more button" href="{{ .RelPermalink }}">{{ $.Site.Params.ReadMore | default "Read more" }} →</a>
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>
+
+{{ end }}
