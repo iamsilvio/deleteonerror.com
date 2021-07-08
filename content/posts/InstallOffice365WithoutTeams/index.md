@@ -6,6 +6,9 @@ draft: false
 tags: ["OneDrive", "Skype", "MS Teams", "office365", "Office Deployment Tool"]
 categories: [windows, itstuff]
 
+hide_reading_time: true
+implementation_time: 30
+
 twitter_creator_id: 94538574
 aliases:
     - /posts/InstallOffice365WithoutTeams/

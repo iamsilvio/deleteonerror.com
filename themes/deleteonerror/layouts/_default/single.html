@@ -19,13 +19,19 @@
           {{ end }}
         {{ end }}
       {{ end }}
-
-      {{ with .Params.Author }}
-        <span class="post-author">— {{ $.Site.Params.WrittenBy | default "Written by" }} {{ . }}</span>{{ end }}
-      {{ if $.Site.Params.ShowReadingTime }}
-        <span class="post-read-time">— {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span>
+      {{ if not .Params.hide_reading_time }}
+      <br/><span class="post-read-time">Reading time: {{ math.Round (div (countwords .Content) 220.0) }} min</span>
       {{ end }}
+      {{ if  isset .Params "implementation_time" }}
+      <br/><span class="post-read-time">Implementation time: {{ $.Params.implementation_time }} min</span>
+      {{ end }}
+      {{ with .Params.Author }}
+        <span class="post-author">— {{ $.Site.Params.WrittenBy | default "Written by" }} {{ . }}</span>
+      {{ end }}
+
     </div>
+
+
 
     {{ if .Params.tags }}
       <span class="post-tags">

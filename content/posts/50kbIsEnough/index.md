@@ -6,6 +6,8 @@ draft: false
 tags: ["nginx", "caching", "gzip", "mimetype", "StaticContent", "hugo", "webserver"]
 categories: [webserver, itstuff]
 
+hide_reading_time: true
+implementation_time: 10
 
 twitter_creator_id: 94538574
 aliases:

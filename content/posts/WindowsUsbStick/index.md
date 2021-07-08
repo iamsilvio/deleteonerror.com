@@ -6,6 +6,9 @@ draft: false
 tags: ["WindowsServer", "Windows", "Legacy", "Diskpart", "USB-Stick", "Boot"]
 categories: [windows, itstuff]
 
+hide_reading_time: true
+implementation_time: 20
+
 twitter_creator_id: 94538574
 aliases:
     - /posts/WindowsUsbStick/

@@ -2,6 +2,8 @@
 title: "about | hostnamectl"
 draft: false
 
+hide_reading_time: true
+
 twitter_creator_id: 94538574
 ---
 

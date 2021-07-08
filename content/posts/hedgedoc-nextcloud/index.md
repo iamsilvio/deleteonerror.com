@@ -6,6 +6,9 @@ draft: false
 tags: ["webserver", "selfhosted", "oss"]
 categories: [itstuff]
 
+hide_reading_time: true
+implementation_time: 30
+
 twitter_creator_id: 94538574
 aliases:
     - /posts/hedgedoc-nextcloud/

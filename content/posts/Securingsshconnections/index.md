@@ -6,6 +6,9 @@ draft: false
 tags: ["security", "devEnv", "ssh", "ed25519","Cryptography"]
 categories: [itstuff]
 
+hide_reading_time: true
+implementation_time: 30
+
 twitter_creator_id: 94538574
 aliases:
     - /posts/Securingsshconnections/

@@ -8,6 +8,9 @@ subtitle: Use your PGP keys from your Yubikey
 tags: ["Integrity", "Authenticity", "GPG", "YubiKey", "PGP", "Git", "Windows", "MacOS"]
 categories: [Integrity, ItSec, HowTo]
 
+hide_reading_time: true
+implementation_time: 45
+
 twitter_creator_id: 94538574
 
 ---

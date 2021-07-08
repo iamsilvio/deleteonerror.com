@@ -6,6 +6,9 @@ draft: false
 tags: ["security", "nftable", "ssh", "firewall","webserver"]
 categories: [itstuff]
 
+hide_reading_time: true
+implementation_time: 5
+
 twitter_creator_id: 94538574
 aliases:
     - /posts/nftables-intro/

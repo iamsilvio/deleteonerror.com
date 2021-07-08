@@ -52,7 +52,7 @@
 
   &-tags {
     display: block;
-    
+
     margin-top: -25px;
     margin-left: 13px;
     margin-bottom: 20px;
@@ -69,6 +69,11 @@
       text-decoration: none;
     }
   }
+
+  &-read-time {
+    float: right;
+  }
+
 
   &-content {
     margin-top: 30px;
