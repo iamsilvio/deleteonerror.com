@@ -11,31 +11,33 @@
       {{ with .Resources }}
         {{ with .GetMatch "{cover,*.jpg,*.png,*.jpeg}" }}
           {{ $alt := .Params.alt }}
-          {{ $cover := .Resize "400x" }}
+          {{ $cover := .Resize "300x" }}
           {{ with $cover }}
-            <figure class="essay-cover">
+            <figure class="essay-list-item-cover">
               <img src="{{ .Permalink }}" alt="{{ $alt }}" />
             </figure>
           {{ end }}
         {{ end }}
       {{ end }}
-      {{ .Params.title | humanize | title }}
+      
     </a>
 
-    <div class="essay-content">
+    <div class="essay-list-item-content">
+      <h2> {{ .Params.title | humanize  }}</h2>
       {{ with .Description }}
         {{ . | markdownify }}
         {{ else }}
           {{ if .Truncated }}
-            {{ .Summary }}
+            {{ .Summary | safeHTML | truncate 200}}
           {{ end }}
         {{ end }}
+        {{ if not .Params.hideReadMore }}
+        <div>
+          <a class="read-more button" href="{{ .RelPermalink }}">{{ $.Site.Params.ReadMore | default "Read more" }} →</a>
+      </div>
+      {{ end }}
     </div>
-    {{ if not .Params.hideReadMore }}
-      <div>
-        <a class="read-more button" href="{{ .RelPermalink }}">{{ $.Site.Params.ReadMore | default "Read more" }} →</a>
-    </div>
-    {{ end }}
+
   </div>
   {{ end }}
 </div>

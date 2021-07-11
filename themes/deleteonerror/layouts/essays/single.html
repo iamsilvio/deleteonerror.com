@@ -6,25 +6,28 @@
     {{ end }}
 <!-- Metadata -->
     <div class="essay-meta">
-        <span class="essay-date">{{ .Date.Format ($.Site.Params.DateFormatSingle | default "2006-01-02") }}</span>
+      <!-- Tags -->
+    {{ if .Params.tags }}
+    <span class="essay-meta-tags">
+      {{ range .Params.tags }}
+        <a href="{{ (urlize (printf "tags/%s" . )) | absURL }}/">#{{ . }}</a>&nbsp;
+      {{ end }}
+    </span>
+  {{ end }}
+  <div class="essay-meta-stats">
+        <span>{{ .Date.Format ($.Site.Params.DateFormatSingle | default "2006-01-02") }}</span>
       {{ if not .Params.hide_reading_time }}
-        <span class="esay-read-time">Reading time: {{ math.Round (div (countwords .Content) 220.0) }} min</span>
+        <span>Reading time: {{ math.Round (div (countwords .Content) 220.0) }} min</span>
       {{ end }}
       {{ with .Params.Author }}
-        <span class="essay-author"> {{ $.Site.Params.WrittenBy | default "Written by" }} {{ . }}</span>
+        <span> {{ $.Site.Params.WrittenBy | default "Written by" }} {{ . }}</span>
       {{ end }}
       {{ if .Draft }}
-        <span class="essay-stats"> {{ countwords .Content }} words </span>
+        <span> {{ countwords .Content }} words </span>
       {{ end }}
     </div>
-<!-- Tags -->
-    {{ if .Params.tags }}
-      <span class="essay-tags">
-        {{ range .Params.tags }}
-          <a href="{{ (urlize (printf "tags/%s" . )) | absURL }}/">#{{ . }}</a>&nbsp;
-        {{ end }}
-      </span>
-    {{ end }}
+    </div>
+
 <!-- Cover -->
     {{ with .Resources }}
     {{ with .GetMatch "{cover,*.jpg,*.png,*.jpeg}" }}
@@ -33,9 +36,9 @@
       {{ $copyright := .Params.copyright }}
       {{ $cover := .Resize "400x" }}
       {{ with $cover }}
-      <figure class="essay-cover">
+      <figure class="center">
           <img src="{{ .Permalink }}" alt="{{ $alt }}"/>
-          <figcaption itemprop="copyright"><a href="{{ $copyright }}">Photo by {{$author}}</a></figcaption>
+          <figcaption class="right" itemprop="copyright">Photo by <a href="{{ $copyright }}">{{$author}}</a></figcaption>
         </figure>
       {{ end }}
     {{ end }}
