@@ -1,0 +1,55 @@
+{{ define "main" }}
+  <div class="essay">
+    <h1 class="essay-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
+    {{ with .Params.subtitle }}
+      <span class="essay-subtitle">{{.}}</span>
+    {{ end }}
+<!-- Metadata -->
+    <div class="essay-meta">
+      <!-- Tags -->
+    {{ if .Params.tags }}
+    <span class="essay-meta-tags">
+      {{ range .Params.tags }}
+        <a href="{{ (urlize (printf "tags/%s" . )) | absURL }}/">#{{ . }}</a>&nbsp;
+      {{ end }}
+    </span>
+  {{ end }}
+  <div class="essay-meta-stats">
+        <span>{{ .Date.Format ($.Site.Params.DateFormatSingle | default "2006-01-02") }}</span>
+      {{ if not .Params.hide_reading_time }}
+        <span>Reading time: {{ math.Round (div (countwords .Content) 220.0) }} min</span>
+      {{ end }}
+      {{ with .Params.Author }}
+        <span> {{ $.Site.Params.WrittenBy | default "Written by" }} {{ . }}</span>
+      {{ end }}
+      {{ if .Draft }}
+        <span> {{ countwords .Content }} words </span>
+      {{ end }}
+    </div>
+    </div>
+
+<!-- Cover -->
+    {{ with .Resources }}
+    {{ with .GetMatch "{cover,*.jpg,*.png,*.jpeg}" }}
+      {{ $alt := .Params.alt }}
+      {{ $author := .Params.author }}
+      {{ $copyright := .Params.copyright }}
+      {{ $cover := .Resize "400x" }}
+      {{ with $cover }}
+      <figure class="center">
+          <img src="{{ .Permalink }}" alt="{{ $alt }}"/>
+          <figcaption class="right" itemprop="copyright">Photo by <a href="{{ $copyright }}">{{$author}}</a></figcaption>
+        </figure>
+      {{ end }}
+    {{ end }}
+    {{end}}
+<!-- Content -->
+    <div class="essay-content">
+      {{ if or .Params.Toc $.Site.Params.Toc }}
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents">{{ .TableOfContents }}</aside>
+      {{ end }}
+      {{ .Content }}
+    </div>
+  </div>
+{{ end }}
