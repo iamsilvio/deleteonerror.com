@@ -19,11 +19,10 @@
           {{ end }}
         {{ end }}
       {{ end }}
-      
     </a>
 
     <div class="essay-list-item-content">
-      <h2> {{ .Params.title | humanize  }}</h2>
+      <h2> {{ .Params.title  }}</h2>
       {{ with .Description }}
         {{ . | markdownify }}
         {{ else }}
